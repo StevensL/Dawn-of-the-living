@@ -31,7 +31,7 @@ size_(DEFAULT_SIZE)
 
 	fileLocation_ = new char[MAX_CHARS];//dynamically allocate the file's location
 
-	for (unsigned int i=0;i <strlen(string);i++)
+	for (int i=0;i <(signed)strlen(string);i++)
 	{
 		fileLocation_[i] = string[i];
 	}

@@ -149,7 +149,7 @@ void Terrain::OnDraw(const Player& p)
 	Populate(4, locations_ );//creates a list of legitimate locations for objects
 	envGrass_.setSize(10);
 
-	for (unsigned int i=0;i < locations_.size ();i++)
+	for ( int i=0;i < (signed)locations_.size ();i++)
 	{
 		envGrass_.setLocations(locations_[i]);
 	}

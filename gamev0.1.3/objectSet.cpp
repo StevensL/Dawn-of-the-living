@@ -9,8 +9,8 @@ using namespace std;
 
 bool ObjectSet::contains (const Object* what) const
 {
-	unsigned int which=0;
-	for (;which < size(); ++which) //using loop w/ iterators didn't work; don't know why
+	 int which=0;
+	for (;which < (signed)size(); ++which) //using loop w/ iterators didn't work; don't know why
 		if ((*this)[which] == what)
 			return true;
 
@@ -67,7 +67,7 @@ void ObjectSet::ProcessCollisions ()
 
 void ObjectSet::Prepare()
 {
-	for (unsigned int i = 0; i < size(); ++i) (*this)[i]->Prepare();
+	for (int i = 0; i < (signed)size(); ++i) (*this)[i]->Prepare();
 	//Why not use iterators?  Because Prepare might add something to the list, whic
 	// trashes the iterator!  Easiest fix for now is to use int instead.
 	/*
