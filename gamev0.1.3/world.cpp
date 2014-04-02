@@ -73,7 +73,7 @@ void World::Animate( float deltaTime)
 {
 
 	player.Animate (deltaTime);
-	//skybox_.render (player.position());  //draw the skybox that moves with the player
+	skybox_.render (player.position());  //draw the skybox that moves with the player
 	
 	//******************************************************************************
 	//(comment out if you do not want to render the world coordinates)
