@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>game</ProjectName>
+    <ProjectGuid>{64A4D2B6-F14D-4580-B390-C4985AB0A45F}</ProjectGuid>
+    <RootNamespace>Chapter 21 game</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\..\..\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(WindowsSDK_IncludePath);$(VCInstallDir)atlmfc\include;$(VCInstallDir)include;c:\Program Files (x86)\Microsoft DirectX SDK (August 2007)\Include;c:\lcgl\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28August 2007%29\Lib\x86;c:\lcgl\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/game.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\Debug/game.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\..\..\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\..\..\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\..\..\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;SOIL_2012_debug.lib;odbccp32.lib;opengl32.lib;glu32.lib;dxguid.lib;winmm.lib;dinput8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/game.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/game.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\Release/game.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;opengl32.lib;glu32.lib;dxguid.lib;winmm.lib;dinput8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release/game.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ProgramDatabaseFile>.\Release/game.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/game.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\audiopath.cpp" />
+    <ClCompile Include="..\..\..\source\billboardfont.cpp" />
+    <ClCompile Include="..\..\..\source\bitmap.cpp" />
+    <ClCompile Include="..\..\..\source\bitmapPCX.cpp" />
+    <ClCompile Include="..\..\..\source\color.cpp" />
+    <ClCompile Include="..\..\..\source\coord.cpp" />
+    <ClCompile Include="..\..\..\source\direction.cpp" />
+    <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="engine.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="explosion.cpp" />
+    <ClCompile Include="..\..\..\source\font.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="gui.cpp" />
+    <ClCompile Include="..\..\..\source\inputSystem.cpp" />
+    <ClCompile Include="..\..\..\source\lcglmath.cpp" />
+    <ClCompile Include="..\..\..\source\listener.cpp" />
+    <ClCompile Include="..\..\..\source\loader.cpp" />
+    <ClCompile Include="..\..\..\source\loadSoilTexture.cpp" />
+    <ClCompile Include="..\..\..\source\matrix.cpp" />
+    <ClCompile Include="..\..\..\source\mobilecamera.cpp" />
+    <ClCompile Include="..\..\..\source\modelmd2.cpp" />
+    <ClCompile Include="..\..\..\source\modelms3d.cpp" />
+    <ClCompile Include="ms3dMonster.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="objectSet.cpp" />
+    <ClCompile Include="ogro.cpp" />
+    <ClCompile Include="..\..\..\source\particles.cpp" />
+    <ClCompile Include="..\..\..\source\performance.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="..\..\..\source\quaternion.cpp" />
+    <ClCompile Include="rocket.cpp" />
+    <ClCompile Include="simpengine.cpp" />
+    <ClCompile Include="sod.cpp" />
+    <ClCompile Include="..\..\..\source\sound.cpp" />
+    <ClCompile Include="..\..\..\source\sound3d.cpp" />
+    <ClCompile Include="..\..\..\source\soundsystem.cpp" />
+    <ClCompile Include="terrain.cpp" />
+    <ClCompile Include="..\..\..\source\texture.cpp" />
+    <ClCompile Include="..\..\..\source\timer.cpp" />
+    <ClCompile Include="..\..\..\source\window.cpp" />
+    <ClCompile Include="world.cpp" />
+    <ClCompile Include="..\..\..\source\worldCoord.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\audiopath.h" />
+    <ClInclude Include="..\..\..\include\billboardfont.h" />
+    <ClInclude Include="..\..\..\include\bitmap.h" />
+    <ClInclude Include="..\..\..\include\bitmapBMP.h" />
+    <ClInclude Include="..\..\..\include\bitmapPCX.h" />
+    <ClInclude Include="..\..\..\include\bitmapTGA.h" />
+    <ClInclude Include="..\..\..\include\camera.h" />
+    <ClInclude Include="..\..\..\include\color.h" />
+    <ClInclude Include="..\..\..\include\coord.h" />
+    <ClInclude Include="..\..\..\include\direction.h" />
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="engine.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="explosion.h" />
+    <ClInclude Include="..\..\..\include\font.h" />
+    <ClInclude Include="gui.h" />
+    <ClInclude Include="..\..\..\include\inputSystem.h" />
+    <ClInclude Include="..\..\..\include\lcglException.h" />
+    <ClInclude Include="..\..\..\include\lcglmath.h" />
+    <ClInclude Include="..\..\..\include\listener.h" />
+    <ClInclude Include="..\..\..\include\loader.h" />
+    <ClInclude Include="..\..\..\include\matrix.h" />
+    <ClInclude Include="..\..\..\include\mobilecamera.h" />
+    <ClInclude Include="..\..\..\include\model.h" />
+    <ClInclude Include="..\..\..\include\modelmd2.h" />
+    <ClInclude Include="..\..\..\include\modelms3d.h" />
+    <ClInclude Include="ms3dMonster.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="objectset.h" />
+    <ClInclude Include="ogro.h" />
+    <ClInclude Include="..\..\..\include\particles.h" />
+    <ClInclude Include="..\..\..\include\performance.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="..\..\..\include\quaternion.h" />
+    <ClInclude Include="rocket.h" />
+    <ClInclude Include="..\..\..\include\sequence.h" />
+    <ClInclude Include="simpengine.h" />
+    <ClInclude Include="sod.h" />
+    <ClInclude Include="..\..\..\include\sound.h" />
+    <ClInclude Include="..\..\..\include\sound3d.h" />
+    <ClInclude Include="..\..\..\include\soundsystem.h" />
+    <ClInclude Include="terrain.h" />
+    <ClInclude Include="..\..\..\include\texture.h" />
+    <ClInclude Include="..\..\..\include\timer.h" />
+    <ClInclude Include="tree.h" />
+    <ClInclude Include="..\..\..\include\window.h" />
+    <ClInclude Include="world.h" />
+    <ClInclude Include="..\..\..\include\worldCoord.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
