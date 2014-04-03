@@ -78,9 +78,8 @@ void Player::OnCollision(Object *collisionObject)
 		|| typeid(*collisionObject)== typeid(MS3DMonster))//fixed collision with player mac 4/3/14
 	{
 		if (velocity().z() > 0.0) velocity_ = NULL_VECTOR; 
-		position_.z() - 6;//push player back from enemies
+		position_.z()= position().z() - 1;//push player back from enemies mac 4/3/14
 		
 	}
-
 
 }
