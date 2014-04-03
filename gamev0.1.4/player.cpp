@@ -72,7 +72,7 @@ void Player::OnCollision(Object *collisionObject)
 			= ((Terrain*)collisionObject)->GetHeight  (position().x(), 
 														position().z()) 
 					+ size();
-		setElevation(position().y()); //player has *2* positions...fix this!
+		setElevation(position().y()+ 1 ); //+one to keep player from getting stuck
 	}
 	else if (typeid(*collisionObject) == typeid(SodEnemy) || typeid(*collisionObject) == typeid(OgroEnemy) 
 		|| typeid(*collisionObject)== typeid(MS3DMonster))//fixed collision with player mac 4/3/14
