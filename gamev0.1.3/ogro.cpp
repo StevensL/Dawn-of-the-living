@@ -57,21 +57,7 @@ void OgroEnemy::OnCollision(Object *collisionObject)
 // . . .but probably should be made different, to make them distinct enemies.
 void OgroEnemy::OnPrepare() 
 {
-		//Here we keep track of how long it was since the last time we randomly changed direction.
-		// This is so we don't do it in each frame -- it looks like the monster is having a fit!  WSB
 
-/*	static const float TIME_BETWEEN_DIRECTION_CHANGES = 1.5f; //1.5 seconds, and the monster shd change direction
-	static float timeSinceLastDirectionChange = 0.0f;
-	timeSinceLastDirectionChange += deltaT_;
-
-	bool timeForAnotherDirectionChange = false;
-	if (timeSinceLastDirectionChange > TIME_BETWEEN_DIRECTION_CHANGES)
-	{
-		timeForAnotherDirectionChange = true;
-		timeSinceLastDirectionChange -= TIME_BETWEEN_DIRECTION_CHANGES;
-			//maybe I should set it to 0.  But I'm going to try keeping time between direction changes pretty constant.
-	}
-	*/
 
 		//Now:  what's the direction away from the player?  This is used for running.  Negate it
 		// and the monster runs TOWARD the player.
@@ -80,18 +66,16 @@ void OgroEnemy::OnPrepare()
 	Direction myNewDir (whereToGo);
 
 	ProcessAI();
-	// now do Ogro prep
+	// now do prep
 	// set _state based on AIstate
 	// if AI_SCARED, then RUN
 	switch (aiState)
 	{
 	case AI_SCARED:
 		{
-			static float randomAngle = 0.0f;
-			//if (timeForAnotherDirectionChange) 
-			//	randomAngle = float ((rand()%zigzagAngle_)-zigzagAngle_/2);
+			
 			setDirection (myNewDir);
-			setYaw (yaw() + randomAngle);		// set the direction of the enemy
+			setYaw (yaw());		// set the direction of the enemy
 			modelInstance_->setState (InstanceMD2::RUN);
 			Entity::run ();
 		}
