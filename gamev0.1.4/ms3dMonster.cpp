@@ -68,7 +68,7 @@ void MS3DMonster::OnPrepare()
 		
 
 	worldCoord whereToGo =  player->position()- position() ;//goes towards the player mac 4/3/14
-	Direction myNewDir (whereToGo);
+	_direction = whereToGo;//better as a private member mac 4/3/14
 
 	ProcessAI();
 	// now do prep
@@ -78,7 +78,7 @@ void MS3DMonster::OnPrepare()
 	{
 	case AI_SCARED:
 		{
-			setDirection (myNewDir);
+			setDirection (_direction);
 			setYaw (yaw());		// set the direction of the enemy
 			modelInstance_->setState (InstanceMD2::RUN);
 			Entity::run ();

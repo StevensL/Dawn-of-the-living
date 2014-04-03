@@ -32,6 +32,7 @@ protected:
 	void OnCollision(Object *collisionObject);
 	float stateStart_, stateEnd_;	// state keyframe start/end
 	float stateStart () const { return stateStart_; } //used by Ogro and Sod
+	lcgl::Direction _direction;//private direction mac 4/3/14
 
 public:
 	MS3DMonster(const ModelMS3D& model,

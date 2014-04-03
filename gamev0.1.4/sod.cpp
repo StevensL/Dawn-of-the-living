@@ -52,6 +52,7 @@ void SodEnemy::OnCollision(Object *collisionObject)
 		}
 		else if (typeid(*collisionObject) == typeid(Player))//for collisions with the player mac 4/3/14
 		{
+			
 			position_.z() = position().z()-5;//bump the model back
 			setAIState(AI_UNCARING);//pauses the model
 		}
@@ -64,7 +65,7 @@ void SodEnemy::OnPrepare()
 {
 		
 	worldCoord whereToGo =  player->position()- position() ;//goes towards the player mac 4/3/14
-	Direction myNewDir (whereToGo);
+	_direction = whereToGo;//better as a private member mac 4/3/14
 
 	ProcessAI();
 	// now do prep
@@ -74,7 +75,7 @@ void SodEnemy::OnPrepare()
 	{
 	case AI_SCARED:
 		{
-			setDirection (myNewDir);
+			setDirection (_direction);
 			setYaw (yaw());		// set the direction of the enemy
 			modelInstance_->setState (InstanceMD2::RUN);
 			Entity::run ();

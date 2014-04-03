@@ -28,6 +28,7 @@ protected:
 	void OnCollision(Object *collisionObject);
 	int stateStart_, stateEnd_;	// state keyframe start/end
 	int stateStart () const { return stateStart_; } //used by Ogro and Sod
+	lcgl::Direction _direction;//private direction mac 4/3/14
 	
 public:
 	OgroEnemy(const ModelMD2& model,
