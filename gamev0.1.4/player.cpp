@@ -24,6 +24,11 @@
 using namespace lcgl;
 using namespace std;
 
+World* world = NULL;
+Player::Player(const Player& thePlayer) : Object (world, PLAYER_SIZE)
+{
+	 terrain = NULL; rocketSound = NULL; health=100;
+}
 void Player::Animate(float deltaTime)
 {
 	static const float MAX_SPEED = 45.0f; //make a member of player? (edited by mac to make player move faster for testing default = 30)

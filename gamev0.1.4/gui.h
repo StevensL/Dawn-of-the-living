@@ -30,7 +30,7 @@ private:
 	int enemiesLeft;
 	float x, y, z;
 
-	BillboardFont font, endText, fps,healthIcon;
+	BillboardFont font, endText, fps,healthIcon,health;
 	Player player_;
 	Timer timer_;
 

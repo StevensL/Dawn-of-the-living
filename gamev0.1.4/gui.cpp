@@ -8,7 +8,8 @@ using namespace lcgl;
 GUI::GUI() :	font		("Arial",	25), 
 				endText		("Arial",	40),
 				fps         ("Arial",	25),
-				healthIcon  ("Arial",	80)
+				healthIcon  ("Arial",	80),
+				health      ("Arial",   40)
 			
 
 {
@@ -100,7 +101,8 @@ void GUI::Draw()
 
 	//glColor4fv(RED);
 	print(healthIcon,twoDCoord<float>(-0.7f,-0.5f),"+");//draw a plus symbol for the health bar
-	
+	print(health, twoDCoord<float> (-0.6f,-.48f),"health: %d"  ,player_.getHealth()); //print out the player's health 
+
 	glDisable(GL_BLEND);
 	glEnable(GL_TEXTURE_2D);
 }

@@ -35,6 +35,7 @@ class Player : public Object
 private:
 	Terrain* terrain;
 	Sound*   rocketSound;
+	int health; 
 protected:
 	void OnCollision (Object *collisionObject);
 
@@ -45,9 +46,10 @@ protected:
 	Direction _direction;
 
 public:
-	Player(World* world = NULL) : Object (world, PLAYER_SIZE) { terrain = NULL; rocketSound = NULL; }
+	Player(World* world = NULL) : Object (world, PLAYER_SIZE) { terrain = NULL; rocketSound = NULL; health=100; }
 	~Player() {}
 	Player (const Player&);
+	inline int getHealth(){return health;};
 	void operator= (const Player&);
 
 	//float		direction ()	{ return camera()->yaw();   }
