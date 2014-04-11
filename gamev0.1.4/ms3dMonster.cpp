@@ -1,17 +1,13 @@
-/*
+/*********************************************************************
 	MS3DMonster.CPP
 
 	The MS3DMonster class implementation
 
-	1-2010 by Will Briggs
+	Description: imports MS3D monsters into the game world mac 4/5 14
 
-	Much copied from
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
-	Description:
+	Adapted By: DOTL Dev Team
 
-*/
+*********************************************************************/
 
 #include <windows.h>
 #include <gl/gl.h>
@@ -50,6 +46,7 @@ void MS3DMonster::OnCollision(Object *collisionObject)
 		else if (typeid(*collisionObject) == typeid(Acid))
 		{
 			// kill the monster
+			_death.play();
 			setAIState (AI_DEAD);	stop();
 		}
 		else if (typeid(*collisionObject) == typeid(Player))//for collisions with the player mac 4/3/14

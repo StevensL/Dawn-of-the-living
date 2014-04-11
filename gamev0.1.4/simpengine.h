@@ -4,17 +4,16 @@
 #define WIN32_LEAN_AND_MEAN
 #define WIN32_EXTRA_LEAN
 
-/*
+/**************************************************************************
 	SIMPENGINE.H
 
 	The SimpEngine class
-
-	Author: Kevin Hawkins
-	Date: 3/29/2001
 	Description: The SimpEngine class is the main interface for SimpEngine.
-			   Derived from Engine, tt provides the camera and world objects.
+			   Derived from Engine, provides the camera and world objects.
 
-*/
+			   Adapted By DOTL Dev Team
+
+*****************************************************************************/
 #include <windows.h>
 #include <gl/gl.h>
 #include <gl/glu.h>

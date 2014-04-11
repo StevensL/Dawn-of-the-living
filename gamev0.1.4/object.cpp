@@ -1,15 +1,13 @@
-/*
+/**********************************************************
 	OBJECT.H
 
   	The Object class
-
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/29/2001
 	Description: The Object class is derived from Node and
 			   represents an object in the game world.
 
-*/
+			   Adapted By DOTL Dev Team
+
+***********************************************************/
 
 #include <windows.h>
 #include <gl/gl.h>

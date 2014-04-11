@@ -1,15 +1,13 @@
-/*
+/************************************************************
 
 	PLAYER.H
 
 	The Player class
+	Description: player class implementation mac 4/5/14
 
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
-	Description:
+	Adapted By DOTL DEV Team
 
-*/
+*************************************************************/
 
 #include <windows.h>
 #include <gl/gl.h>
@@ -82,6 +80,7 @@ void Player::OnCollision(Object *collisionObject)
 	else if (typeid(*collisionObject) == typeid(SodEnemy) || typeid(*collisionObject) == typeid(OgroEnemy) 
 		|| typeid(*collisionObject)== typeid(MS3DMonster))//fixed collision with player mac 4/3/14
 	{
+		//_pain.play();
 		if (velocity().z() > 0.0) velocity_ = NULL_VECTOR; 
 		position_.z()= position().z() - 1;//push player back from enemies mac 4/3/14
 		

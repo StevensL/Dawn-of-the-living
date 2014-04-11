@@ -229,15 +229,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\EnviroObj.h"
+				>
+			</File>
+			<File
 				RelativePath="explosion.h"
 				>
 			</File>
 			<File
 				RelativePath="gui.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\include\lcglmath.h"
 				>
 			</File>
 			<File

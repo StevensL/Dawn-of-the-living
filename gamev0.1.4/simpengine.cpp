@@ -3,16 +3,13 @@
 
 #include "simpengine.h"
 
-/*
+/***************************************
 	SIMPENGINE.CPP
 
 	The SimpEngine implementation
+	Adapted By DOTL DEV Team
 
-	Author: Kevin Hawkins
-	Date: 4/4/2001
-	Description:
-
-*/
+****************************************/
 
 using namespace lcgl;
 

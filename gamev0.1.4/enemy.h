@@ -1,17 +1,16 @@
 #ifndef __ENEMY_H
 #define __ENEMY_H
 
-/*
+/*********************************
 	ENEMY.H
 
 	The Enemy class
 
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
 	Description: The Enemy class
 
-*/
+	Adapted By: DOTL Dev Team
+
+*************************************/
 
 #include "entity.h"
 

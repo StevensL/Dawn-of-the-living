@@ -1,16 +1,13 @@
 #ifndef __ROCKET_H
 #define __ROCKET_H
 
-/*
-	
-	FILENAME
-	What is in this file?
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: XX/XX/XXXX
-	Description:
 
-*/
+/***********************
+Acid.h
+players primary weapon
+adapted by Dotl Dev Team 
+
+***********************/
 
 #include "explosion.h"
 #include "terrain.h"
@@ -37,6 +34,8 @@ private:
 
 	Texture2D*	_explosionTexture;
 	Explosion*	_explosion;
+
+	lcgl::Sound acidInitialSound;
 
 public:
 	Acid	(const ModelMD2& model, const Texture2D& explosionTexInit, World* world, const Direction& newDirection);

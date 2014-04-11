@@ -1,19 +1,17 @@
 #ifndef MS3DMONSTER_H
 #define MS3DMONSTER_H
 
-/*
+/*********************************************************
 	OGRO.H
 
 	The SodEnemy class
 
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
 	Description: The OgroEnemy represents the Ogro model
 			   enemy. This enemy is considered "dumb",
 			   but has a thicker coat of armor.
+			   Adapted by: DOTL Dev Team
 
-*/
+*********************************************************/
 
 #include "enemy.h"
 #include "modelms3d.h"
@@ -33,6 +31,7 @@ protected:
 	float stateStart_, stateEnd_;	// state keyframe start/end
 	float stateStart () const { return stateStart_; } //used by Ogro and Sod
 	lcgl::Direction _direction;//private direction mac 4/3/14
+	lcgl::Sound _death;
 
 public:
 	MS3DMonster(const ModelMS3D& model,
@@ -49,7 +48,7 @@ public:
 				 Direction(0,0),
 				 DEFAULT_RUNNING_SPEED,
 				 MS3DMONSTER_DEFAULT_ANIMATION_SPEED
-				 ) 
+				 ), _death("sounds//dyinggroan.wav")
 	{ 
 		stateStart_ = 0.0;
 		stateEnd_ =(float)model.totalTime(); //our state is ALL moves

@@ -1,11 +1,10 @@
-/*
+/*********************************************************************
 	skybox.h
 
 	The Skybox class.  Use it to make a sky box that seems to be at 
 	 infinite distance, because it moves with you
-
 	 adapted by Michael Carey
-*/
+**********************************************************************/
 
 #include <windows.h>     
 #include <gl\gl.h>       

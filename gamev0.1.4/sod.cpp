@@ -1,14 +1,10 @@
-/*
+/**************************************
 	SOD.CPP
 
 	The SodEnemy class implementation
+	Adapted By: DOTL DEV Team
 
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
-	Description:
-
-*/
+***************************************/
 
 #include <windows.h>
 #include <gl/gl.h>
@@ -47,7 +43,8 @@ void SodEnemy::OnCollision(Object *collisionObject)
 		}
 		else if (typeid(*collisionObject) == typeid(Acid))
 		{
-			// kill the ogre
+			// kill the sod
+			_death.play();//play the sound of the enemy dieing mac
 			setAIState  (AI_DEAD);	stop();
 		}
 		else if (typeid(*collisionObject) == typeid(Player))//for collisions with the player mac 4/3/14

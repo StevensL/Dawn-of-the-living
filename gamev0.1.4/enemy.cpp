@@ -1,16 +1,13 @@
-/*
+/*****************************************
 	ENEMY.H
 
 	The Enemy class
 
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
 	Description: The Enemy class
 
-	Drastically rewritten 11-2007 Will Briggs
+	Adapted By DOTL Dev Team
 
-*/
+*******************************************/
 
 #include "enemy.h"
 #include "player.h"

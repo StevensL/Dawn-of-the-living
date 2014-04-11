@@ -1,19 +1,16 @@
 #ifndef __SOD_H
 #define __SOD_H
 
-/*
+/********************************************************
 	SOD.H
 
 	The SodEnemy class
-
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
 	Description: The SodEnemy represents the Sod model
 			   enemy. This enemy is considered smarter,
 			   but has weaker armor than the Ogre.
+			   Adapted By DOTL Dev Team
 
-*/
+*********************************************************/
 
 #include "enemy.h"
 
@@ -29,6 +26,7 @@ protected:
 	int stateStart_, stateEnd_;	// state keyframe start/end
 	int stateStart () const { return stateStart_; } //used by Ogro and Sod
 	lcgl::Direction _direction;//private direction mac 4/3/14
+	lcgl::Sound _death; //noise the model makes when it dies mac 4/3/14
 
 public:
 	SodEnemy (const ModelMD2& model,
@@ -37,7 +35,7 @@ public:
 		world, p, SOD_RADIUS_OF_AWARENESS, 
 		SOD_ZIGZAG_ANGLE,
 		DEFAULT_ENTITY_SIZE,
-		worldCoord (x, 0, z)) 
+		worldCoord (x, 0, z)),_death("sounds//dyinggroan.wav")
 	{ 
 		stateStart_ = 0;
 		stateEnd_ = 39;

@@ -1,19 +1,17 @@
 #ifndef __OGRO_H
 #define __OGRO_H
 
-/*
+/************************************************************
 	OGRO.H
 
 	The SodEnemy class
 
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
 	Description: The OgroEnemy represents the Ogro model
 			   enemy. This enemy is considered "dumb",
 			   but has a thicker coat of armor.
+			   Adapted By: DOTL Dev Team
 
-*/
+*************************************************************/
 
 #include "enemy.h"
 
@@ -29,6 +27,7 @@ protected:
 	int stateStart_, stateEnd_;	// state keyframe start/end
 	int stateStart () const { return stateStart_; } //used by Ogro and Sod
 	lcgl::Direction _direction;//private direction mac 4/3/14
+	Sound _death; 
 	
 public:
 	OgroEnemy(const ModelMD2& model,
@@ -40,7 +39,7 @@ public:
 		OGRO_ZIGZAG_ANGLE,
 		DEFAULT_ENTITY_SIZE,
 		worldCoord (x, 0, z)
-		) 
+		), _death("sounds//2scream.wav")
 	{  
 		stateStart_ = 0;
 		stateEnd_ = 39;	

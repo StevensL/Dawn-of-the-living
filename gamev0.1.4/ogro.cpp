@@ -1,14 +1,13 @@
-/*
+/***********************************************
 	OGRO.CPP
 
 	The SodEnemy class implementation
 
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
-	Description:
+	Description: adds MD2 enemies mac 4/5/14
 
-*/
+	Adapted By DOTL Dev Team
+
+**************************************************/
 
 #include <windows.h>
 #include <gl/gl.h>
@@ -48,6 +47,7 @@ void OgroEnemy::OnCollision(Object *collisionObject)
 		else if (typeid(*collisionObject) == typeid(Acid))
 		{
 			// kill the ogre
+			_death.play();//play death noise mac 4/3/14
 			setAIState (AI_DEAD);	stop();
 		}
 		else if (typeid(*collisionObject) == typeid(Player))//for collisions with the player mac 4/3/14
@@ -99,6 +99,7 @@ void OgroEnemy::OnPrepare()
 		}
 		break;
 	case AI_DEAD:
+		
 		modelInstance_->setState (InstanceMD2::DIE);
 		stop();
 		//if (modelInstance_->nextFrame ()== stateStart()) die();	// time to kill the monster

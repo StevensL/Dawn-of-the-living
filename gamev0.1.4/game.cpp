@@ -48,7 +48,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE, LPSTR, int nCmdShow)
 	str << "\nLeft Mouse button shoots acid!!\nMove the mouse to look around\n\n";
 	str << "Features in version: 0.1.4 \n";
 	str<< "-Particle system\n -Skybox \n -Billboarded objects\n-Acid spitting\n -Dynamic HUD\n-Acid model\n -General bug fixes\n";
-	str<<"-Enemies run towards player\n-Collisions with enemies\n -Collisions with player";
+	str<<"-Enemies run towards player\n-Collisions with enemies\n -Collisions with player\n-New Soundtrack";
 	str<<"\n\n Enjoy!!\n";
 	str << "\nContributers: Mike the Monk && BeardZilla\n";
 	

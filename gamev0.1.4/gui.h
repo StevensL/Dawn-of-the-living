@@ -4,16 +4,15 @@
 #define WIN32_LEAN_AND_MEAN
 #define WIN32_EXTRA_LEAN
 
-/*
+/***********************************************
 	
 	GUI.H
-	The GUI class interface
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 4/2/2001
-	Description:
+	The GUI class interface 
+	Description: Display the HUD Mac 4/5 14
+	adapted By: Mike Carey && L_wood
 
-*/
+
+************************************************/
 
 #include <windows.h>
 #include "billboardfont.h"

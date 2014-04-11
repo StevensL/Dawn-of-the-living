@@ -1,9 +1,9 @@
-/*****************************
+/******************************************************
 create the terrain that the player explores 
 also push billboarded objects to add realism to the map
 mac 3/16/14
 
-******************************/
+*******************************************************/
 
 #include <stdlib.h>
 #include <math.h>
@@ -120,29 +120,15 @@ void Terrain::OnDraw(const Player& p)
 	myFog.setRange (FOG_MIN_DEPTH, FOG_MAX_DEPTH);		//setup fog min and max range
 	myFog.setHint (GL_NICEST);
 
-	//glEnable(GL_LIGHTING);
-	//Light light0;
-
-	//worldCoord lightPosition(960,300,200);
-
-	////light0.setAmbient(WHITE);		//set ambient light aka non directional light
-	////light0.setDiffuse(GREY);		//set reflective light
-	//light0.setSpecular(WHITE);		//sets specular aka shininess
-	//light0.setPosition(lightPosition, true);
-
-	//light0.enable();
-
-
-	/*
-	******************************************************
+	
+	/*******************************************************
 	Add enviroObjs here 
 	before the terrain is created because enviroObjs 
 	utilize the existing coordinates  created during this process 
 	only supports 3 objects at the moment
 	for some reason rand() functions mess up the particle system
 	mac 3/15/14
-	******************************************************
-	*/
+	*******************************************************/
 
 
 	//draw patches of dried grass
@@ -151,26 +137,28 @@ void Terrain::OnDraw(const Player& p)
 
 	for ( int i=0;i < (signed)locations_.size ();i++)
 	{
-		envGrass_.setLocations(locations_[i]);
+		envGrass_.setLocations(locations_[i]);//set the locations vector in envGrass_
 	}
 
 
 	for (int i=0;i < envGrass_.getVectorSize() ;i++)
 	{
-		envGrass_.render(envGrass_.getLocations(i) );// render all the trees 
+		envGrass_.render(envGrass_.getLocations(i) );// render all the grass procedurally  
 	}
 	
 	envGrass_.clearLocations();		//clear out the locations vector increases fps
 	clearLocations();				//clear all the vectors to free up unused locations increases fps
 
-
+	//Draw Billboarded objects***********************************************************************
+	//***********************************************************************************************
 	//draw the building
 	envHouse_.setSize(125);
 	envHouse_.render(worldCoord(1414, 200, 1499));
 
 	//render the cacti 
-	//had to do it this way because using rand() functions messes with 
+	//had to render this way because using rand() functions messes with 
 	//the particle system mac 3/15/14
+
 	envCacti_.setSize(20);
 	envCacti_.render(worldCoord(1303, 146, 930) );
 	envCacti_.render(worldCoord(1055, 106, 1224) );
@@ -186,6 +174,7 @@ void Terrain::OnDraw(const Player& p)
 
 
 	//draw old cars
+
 	envCar_.setSize(20);
 	envCar_.render(worldCoord(1322, 127, 471) ) ;
 	envCar_.render(worldCoord(689, 22, 913) ) ;
@@ -200,7 +189,6 @@ void Terrain::OnDraw(const Player& p)
 	envPcactus_.render(worldCoord(780, 65, 382) );
 	envPcactus_.render(worldCoord(1397, 91, 1184));
 
-
 	//draw rocks
 
 	envRock_.setSize(10);
@@ -211,11 +199,8 @@ void Terrain::OnDraw(const Player& p)
 	envRock_.render(worldCoord(827, 68, 314) );
 	envRock_.render(worldCoord(1099, 95, 1274) );
 	
-	//dr_M_.setSize(25);
-	//dr_M_.render(worldCoord(1590, 161, 1590));
 
-
-
+//*******************************************************************************************************
 //*******************************************************************************************************
 
 
@@ -370,15 +355,11 @@ void Terrain::MakeTerrainPlasma(float field[],int size,float rough)
 	float dh = (float)rectSize/2,r = (float)pow(2,-1*rough);
 
 //	Since the terrain wraps, all 4 "corners" are represented by the value at 0,0,
-//		so seeding the height field is very straightforward
-//	Note that it doesn't matter what we use for a seed value, since we're going to
-//		re normalize the terrain after we're done
+	//seed srand(200) in game.cpp gives a "standard map 
+	//instead of random each time the program starts mac 3/16/14
+
 
 	
-	
-//seed srand(200) in game.cpp gives a "standard map 
-//instead of random each time the program starts mac 3/16/14
-
 
 	field[0] = 0;
 
@@ -494,14 +475,7 @@ void Terrain::MakeTerrainPlasma(float field[],int size,float rough)
 	// Normalize terrain so minimum value is 0 and maximum value is 1
 	NormalizeTerrain(field,size);
 
-
-
-	
 }
-
-
-
-
 
 float Terrain::GetHeight(double x, double z)
 {	

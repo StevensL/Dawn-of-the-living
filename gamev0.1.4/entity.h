@@ -1,20 +1,20 @@
 #ifndef __ENTITY_H
 #define __ENTITY_H
 
-/*
+/******************************************************************
 	ENTITY.H
 
 	The Entity class
 
-	Author: Kevin Hawkins
-	Date: 3/29/2001
 	Description: The Entity class is derived from CModelMD2 and
 			   provides the functionality of an entity in the
 			   game world. It holds the current MD2 animation
 			   state, the entity angle heading, and the entity's
 			   primary sound.
 
-*/
+			   Adapted By DOTL Dev Team
+
+*****************************************************************/
 
 #include <typeinfo.h>
 #include "modelmd2.h"

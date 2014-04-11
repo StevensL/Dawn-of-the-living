@@ -4,19 +4,21 @@
 #define WIN32_LEAN_AND_MEAN
 #define WIN32_EXTRA_LEAN
 
-/*
-	ENGINE.H
+/************************************************************************/
+/*  ENGINE.H
 
 	The main engine class
 
-	Author: Kevin Hawkins
-	Date: 3/29/2001
 	Description: Engine is the main engine class, derived from OGLWindow.
-			   It holds virtual functions GameCycle, OnPrepare, 
-			   and world. Engine is also the location of the main
-			   Windows message loop. 
+	It holds virtual functions GameCycle, OnPrepare, 
+	and world. Engine is also the location of the main
+	Windows message loop.
 
-*/
+			Adapted By: DOTL Dev Team															*/
+/************************************************************************/
+	 
+
+
 
 #include <windows.h>
 #include <dinput.h>

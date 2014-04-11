@@ -1,18 +1,16 @@
 #ifndef __PLAYER_H
 #define __PLAYER_H
 
-/*
+/*******************************************************
 
 	PLAYER.H
 
 	The Player class
 
-	OpenGL Game Programming
-	Author: Kevin Hawkins
-	Date: 3/30/2001
-	Description:
+	Description:The game user or camera view mac 4/5 14
+	Adapted By: DOTL Dev Team
 
-*/
+********************************************************/
 
 #include <typeinfo.h>
 
@@ -43,7 +41,8 @@ protected:
 
 	//Camera   myCamera;
 	//Camera*  camera ()  { return &myCamera; }
-	Direction _direction;
+	lcgl::Direction _direction;
+	//lcgl::Sound _pain;,_pain("sounds//2scream.wav")
 
 public:
 	Player(World* world = NULL) : Object (world, PLAYER_SIZE) { terrain = NULL; rocketSound = NULL; health=100; }
